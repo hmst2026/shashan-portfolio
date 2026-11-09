@@ -1,25 +1,39 @@
-# Shashan Tissera — Coming Soon
+# shashan.me
 
-A responsive HTML/CSS/JavaScript portfolio landing page. No framework or build process needed.
+Personal portfolio of Shashan Tissera. Plain HTML, CSS and JavaScript, with no build step.
 
-## Preview locally
-Double-click `index.html`, or open the folder in VS Code and use Live Server.
+## Files
 
-## Customize
-Open `script.js` and edit `CONFIG.launchDate`, `CONFIG.contactEmail`, and the four social URLs. Empty social URLs are hidden. Change the name, tagline, and intro in `index.html`.
+| File | Purpose |
+|---|---|
+| `index.html` | The whole site (styles and scripts are inside) |
+| `assets/` | Portrait photo and social share image |
+| `logos/` | Put `coventry.png` and `plymouth.png` here (see `logos/README.txt`) |
+| `CNAME` | Tells GitHub Pages to serve the site at shashan.me |
+| `robots.txt`, `sitemap.xml` | Search engine files |
+| `favicon.svg`, `apple-touch-icon.png` | Browser and phone icons |
+| `404.html` | Page shown for unknown addresses |
 
-**Important:** The Notify Me button opens the visitor's email application; it does NOT store email addresses or subscribe users. For automatic email collection, integrate a service such as Formspree, Mailchimp, or Buttondown and configure consent/privacy information.
+## Publish on GitHub Pages with shashan.me
 
-The countdown is set to a SAMPLE date (1 November 2026 at 12:00 UK time). Change it to your real launch date.
+1. Create a new public repository on GitHub (for example `portfolio`).
+2. Click **Add file > Upload files**, drag in everything from this folder (the contents, not the folder itself), and commit.
+3. Open **Settings > Pages**. Under **Build and deployment** choose **Deploy from a branch**, branch `main`, folder `/ (root)`, and save.
+4. Under **Custom domain** enter `shashan.me` and save. The `CNAME` file already contains it.
+5. At your domain registrar, open the DNS settings for shashan.me and add:
 
-## Publish on Namecheap shared hosting
-1. Log in to Namecheap and open your hosting cPanel.
-2. Open File Manager > `public_html` (or the document root of your chosen domain).
-3. Upload **index.html**, **styles.css**, **script.js**, and the **assets** folder (preserve file paths).
-4. Visit your domain. Enable SSL/HTTPS through your host.
+| Type | Host | Value |
+|---|---|---|
+| A | @ | 185.199.108.153 |
+| A | @ | 185.199.109.153 |
+| A | @ | 185.199.110.153 |
+| A | @ | 185.199.111.153 |
+| CNAME | www | YOUR-GITHUB-USERNAME.github.io |
 
-## If you only bought a domain
-You still need hosting. A static host such as GitHub Pages, Cloudflare Pages, or Netlify can host these files. Then configure your Namecheap DNS according to that host's instructions. Do not change DNS blindly if you use domain-based email.
+6. Wait for DNS to update (a few minutes to a few hours), then tick **Enforce HTTPS** in Settings > Pages.
 
-## Assets
-`assets/atmosphere.jpg` is derived from your provided design reference. `assets/reference.png` is included only for comparison; the website does not load it.
+## After it is live
+
+- Submit `https://shashan.me/sitemap.xml` in Google Search Console.
+- Replace the LinkedIn link in `index.html` (search for `linkedin.com`) with your public profile address, which looks like `https://www.linkedin.com/in/your-name`.
+- Add the two logo files to `logos/`.
